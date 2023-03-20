@@ -1,0 +1,65 @@
+{
+  "without_filters": {
+    "resource": "properties/",
+    "method": "GET",
+    "Authentication": {"username": "test_user", "password": "testpass123"},
+    "headers": {"Content-Type": "application/json"},
+    "request_body": {}
+  },
+  "en_venta": {
+    "resource": "properties?status.name=en_venta",
+    "method": "GET",
+    "Authentication": {"username": "test_user", "password": "testpass123"},
+    "headers": {"Content-Type": "application/json"},
+    "request_body": {}
+  },
+  "pre_venta": {
+    "resource": "properties?status.name=pre_venta",
+    "method": "GET",
+    "Authentication": {"username": "test_user", "password": "testpass123"},
+    "headers": {"Content-Type": "application/json"},
+    "request_body": {}
+  },
+  "vendido": {
+    "resource": "properties?status.name=vendido",
+    "method": "GET",
+    "Authentication": {"username": "test_user", "password": "testpass123"},
+    "headers": {"Content-Type": "application/json"},
+    "request_body": {}
+  },
+  "with_filters": [
+    {
+    "resource": "properties?status.name=pre_venta&property.year=2010",
+    "method": "GET",
+    "Authentication": {"username": "test_user", "password": "testpass123"},
+    "headers": {"Content-Type": "application/json"},
+    "request_body": {}
+  },
+  {
+    "resource": "properties?status.name=en_venta&property.city=bogota",
+    "method": "GET",
+    "Authentication": {"username": "test_user", "password": "testpass123"},
+    "headers": {"Content-Type": "application/json"},
+    "request_body": {}
+  },
+  {
+    "resource": "properties?status.name=en_venta&property.price=250000000",
+    "method": "GET",
+    "Authentication": {"username": "test_user", "password": "testpass123"},
+    "headers": {"Content-Type": "application/json"},
+    "request_body": {}
+  }
+  ],
+  "method_not_allowed": {
+    "resource": "properties/",
+    "method": "POST",
+    "Authentication": {
+      "username": "test_user",
+      "password": "testpass123"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {}
+  }
+}
