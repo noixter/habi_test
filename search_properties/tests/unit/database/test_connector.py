@@ -19,7 +19,7 @@ class TestMySQLDBConnector:
     def test_create_connection_failed_by_credentials(
         self,
     ):
-        config["DATABASE"]["password"] = faker.pystr()
+        config.database.password = faker.pystr()
         with pytest.raises(mysql.connector.Error) as err:
             MYSQLConnector()
 

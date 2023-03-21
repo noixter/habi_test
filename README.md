@@ -171,6 +171,7 @@ To run the tests suites that involves all the proposed cases do the following:
 make config  # this will setup all the suite
 make up # this will execute the tests suite
 ```
+Make sure you have defined the .env file with the DB_PARAMETERS needed for db connection
 
 or if you prefer do this following this docker commands:
 ```bash

@@ -1,9 +1,27 @@
-import configparser
-import os.path
+from dataclasses import dataclass
+from decouple import config
 
-config_path = os.path.join(os.path.dirname(__file__), "config.ini")
 
-config = configparser.ConfigParser()
-config.read(config_path)
+@dataclass
+class DBConfig:
+    user: str
+    password: str
+    database: str
+    host: str
+    port: str
 
-assert "DATABASE" in config.sections(), "database configurations are not set yet"
+
+@dataclass
+class Config:
+    database: DBConfig
+
+
+config = Config(
+    database=DBConfig(
+        user=config('DB_USER', 'admin'),
+        password=config('DB_PASSWORD', 'password'),
+        database=config('DB_NAME', 'habi_test'),
+        host=config('DB_HOST', 'localhost'),
+        port=config('DB_PORT', '3309'),
+    )
+)
